@@ -6,8 +6,8 @@ class Delete extends Mebo.Action{
   constructor(){
     super();
 
-    // using a custom input type to handle the mongo id hash.
-    // This input implementation can be found at '../../Inputs/mongoId.js'
+    // using a custom input type to handle the mongo's object id.
+    // This custom input can be found at '../../Inputs/mongoId.js'
     this.createInput('id: mongoId');
   }
 
