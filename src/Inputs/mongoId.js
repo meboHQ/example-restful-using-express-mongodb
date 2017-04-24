@@ -7,8 +7,7 @@ const Mebo = require('mebo');
  * https://docs.mongodb.com/manual/reference/method/ObjectId
  *
  * By doing this it makes the code more readable when using it in
- * actions, otherwise the solution would require to
- * use a generic hash input:
+ * actions, otherwise it would require to use a generic hash input:
  *
  * ...
  * // using custom input for mongo's object id
