@@ -1,0 +1,8 @@
+# global git ignore
+node_modules
+npm-debug.log
+
+# OS
+Desktop.ini
+*.DS_Store
+Thumbs.db
