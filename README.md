@@ -17,7 +17,7 @@ Mongodb 3 or greater
 ## Running example
 ```
 git clone https://github.com/meboHQ/example-restful-using-express-mongodb.git
-cd example-rest
+cd example-restful-using-express-mongodb
 npm install
 node .
 ```
