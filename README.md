@@ -10,9 +10,9 @@ It covers the basics of Mebo's RESTful support:
 [Mebo.restful](https://mebohq.github.io/docs/class/src/Ext/Handlers/Web.js~Web.html)
 
 ## Requirements
-Node 6 or greater
-Express 4 or greater
-Mongodb 3 or greater
+- Node 6 or greater
+- Express 4 or greater
+- Mongodb 3 or greater
 
 ## Running example
 ```
