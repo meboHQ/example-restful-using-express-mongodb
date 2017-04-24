@@ -3,7 +3,7 @@
 </p>
 
 ## RESTful example using Express and Mongodb
-This example was adapted from the REST tutorial:
+This example was adapted from the RESTful tutorial:
 [build a restful api using node and express 4](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
 
 It covers the basics of Mebo's RESTful support:
