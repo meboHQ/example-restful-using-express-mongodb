@@ -1,7 +1,8 @@
 const Mebo = require('mebo');
 const BearModel = require('../../Models/Bear');
 
-
+@Mebo.grant('web', {method: "get", restRoute: "/bears/:id"}) // GET: http://localhost:8080/api/bears/:id)
+@Mebo.register('bear.get') // registering action
 class Get extends Mebo.Action{
   constructor(){
     super();
@@ -15,11 +16,5 @@ class Get extends Mebo.Action{
     return BearModel.findById(data.id).select('name');
   }
 }
-
-// registering action
-Mebo.registerAction(Get, 'bear.get');
-
-// webfying action (GET: http://localhost:8080/api/bears/:id)
-Mebo.webfyAction('bear.get', 'get', {restRoute: '/bears/:id'})
 
 module.exports = Get;

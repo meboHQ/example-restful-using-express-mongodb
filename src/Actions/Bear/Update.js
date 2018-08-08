@@ -2,6 +2,8 @@ const Mebo = require('mebo');
 const BearModel = require('../../Models/Bear');
 
 
+@Mebo.grant('web', {method: "put", restRoute: "/bears/:id"}) // UPDATE: http://localhost:8080/api/bears/:id)
+@Mebo.register('bear.update') // registering action
 class Update extends Mebo.Action{
   constructor(){
     super();
@@ -23,16 +25,10 @@ class Update extends Mebo.Action{
 
     // defining a custom result that only affects the web handler, otherwise
     // if not defined the returning value of _perform is used instead.
-    this.setMetadata('$webResult', {
+    this.setMeta('$webResult', {
       message: 'Bear updated!',
     })
   }
 }
-
-// registering action
-Mebo.registerAction(Update, 'bear.update');
-
-// webfying action (PUT: http://localhost:8080/api/bears/:id)
-Mebo.webfyAction('bear.update', 'put', {restRoute: '/bears/:id'})
 
 module.exports = Update;

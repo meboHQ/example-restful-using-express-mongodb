@@ -16,7 +16,7 @@ const app = express();
 app.use(morgan('dev'));
 
 // providing Mebo's restful support under the prefix 'api' to the express app
-Mebo.restful(app, '/api');
+Mebo.Handler.get('web').restful(app, '/api');
 
 // starting the server
 const port = process.env.PORT || 8080; // set our port

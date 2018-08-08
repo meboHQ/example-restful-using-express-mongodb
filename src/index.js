@@ -2,8 +2,8 @@
 // In a production environment please consider transpiling beforehand
 require('babel-register');
 
-// registering the special mongo id input used by the actions
-require('./Inputs/mongoId');
+// registering special mongo id input used by the actions
+require('./Inputs/MongoId');
 
 // registering actions
 require('./Actions');

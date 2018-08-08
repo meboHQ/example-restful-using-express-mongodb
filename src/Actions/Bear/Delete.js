@@ -1,7 +1,8 @@
 const Mebo = require('mebo');
 const BearModel = require('../../Models/Bear');
 
-
+@Mebo.grant('web', {method: "delete", restRoute: "/bears/:id"}) // DELETE: http://localhost:8080/api/bears/:id)
+@Mebo.register('bear.delete') // registering action
 class Delete extends Mebo.Action{
   constructor(){
     super();
@@ -20,16 +21,10 @@ class Delete extends Mebo.Action{
 
     // defining a custom result that only affects the web handler, otherwise
     // if not defined the returning value of _perform is used instead.
-    this.setMetadata('$webResult', {
+    this.setMeta('$webResult', {
       message: 'Successfully deleted!',
     });
   }
 }
-
-// registering action
-Mebo.registerAction(Delete, 'bear.delete');
-
-// webfying action (DELETE: http://localhost:8080/api/bears/:id)
-Mebo.webfyAction('bear.delete', 'delete', {restRoute: '/bears/:id'})
 
 module.exports = Delete;

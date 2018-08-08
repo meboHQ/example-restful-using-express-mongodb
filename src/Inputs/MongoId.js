@@ -20,12 +20,7 @@ const Mebo = require('mebo');
  * this.createInput('id: hash', {size: 96})
  * ...
  */
+@Mebo.property('size', 96)
+@Mebo.register('mongoId')
+class MongoId extends Mebo.Inputs.Hash{}
 
-// Registering a new input type based on the existing hash input that
-// is bundled with Mebo (since we are going to just set a default
-// value for a property, there is no need for subclassing it)
-Mebo.registerInput(Mebo.Ext.Inputs.Hash, 'mongoId');
-
-// Now registering 'size' property as 96 bit long by default
-// for the mongoId input
-Mebo.registerProperty('mongoId', 'size', 96);
