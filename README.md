@@ -19,7 +19,7 @@ It covers the basics of Mebo's RESTful support:
 git clone https://github.com/meboHQ/example-restful-using-express-mongodb.git
 cd example-restful-using-express-mongodb
 npm install
-node .
+NODE_ENV=development node .
 ```
 
 ## Actions
