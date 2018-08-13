@@ -22,12 +22,22 @@ class Update extends Mebo.Action{
     const bear = await BearModel.findById(data.id);
     bear.name = data.name;
     await bear.save();
+  }
 
-    // defining a custom result that only affects the web handler, otherwise
-    // if not defined the returning value of _perform is used instead.
-    this.setMeta('$webResult', {
-      message: 'Bear updated!',
-    })
+  _finalize(err, value){
+    // defining a custom result that only affects the web handler
+    // this call could be done inside of the _perform method. However, we
+    // are defining it inside of the _finalize to keep _perform as
+    // abstract as possible. Since, _finalize is always called (even during
+    // an error) after the execution of the action, it provides a way to
+    // hook and define custom metadata related with the result.
+    if (!err){
+      this.setMeta('$webResult', {
+        message: 'Bear updated!',
+      });
+    }
+
+    return super._finalize(err, value);
   }
 }
 
