@@ -7,7 +7,7 @@ const Mebo = require('mebo');
 mongoose.Promise = global.Promise;
 
 // connect to our database
-mongoose.connect('mongodb://127.0.0.1:27017');
+mongoose.connect('mongodb://127.0.0.1:27017/bear', {useNewUrlParser: true});
 
 // creating an express app
 const app = express();
