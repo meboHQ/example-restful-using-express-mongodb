@@ -7,7 +7,7 @@ This example was adapted from the RESTful tutorial:
 [build a restful api using node and express 4](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
 
 It covers the basics of Mebo's RESTful support:
-[Mebo.restful](https://mebohq.github.io/docs/class/src/Ext/Handlers/Web.js~Web.html)
+[Mebo.restful](https://mebohq.github.io/docs/class/src/Handlers/Web.js~Web.html)
 
 ## Requirements
 - Node 8 or greater
