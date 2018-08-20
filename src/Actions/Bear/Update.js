@@ -1,7 +1,7 @@
 const Mebo = require('mebo');
 const BearModel = require('../../Models/Bear');
 
-
+@Mebo.grant('cli')
 @Mebo.grant('web', {method: "put", restRoute: "/bears/:id"}) // UPDATE: http://localhost:8080/api/bears/:id)
 @Mebo.register('bear.update') // registering action
 class Update extends Mebo.Action{
@@ -10,7 +10,7 @@ class Update extends Mebo.Action{
 
     // using a custom input type to handle the mongo's object id.
     // This custom input can be found at '../../Inputs/mongoId.js'
-    this.createInput('id: mongoId');
+    this.createInput('id: mongoId', {'elementType': 'argument'});
 
     // input used to specify the new name
     this.createInput('name: string');
@@ -24,11 +24,11 @@ class Update extends Mebo.Action{
     await bear.save();
   }
 
-  _finalize(err, value){
+  async _after(err, value){
     // defining a custom result that only affects the web handler
     // this call could be done inside of the _perform method. However, we
-    // are defining it inside of the _finalize to keep _perform as
-    // abstract as possible. Since, _finalize is always called (even during
+    // are defining it inside of the _after to keep _perform as
+    // abstract as possible. Since, _after is always called (even during
     // an error) after the execution of the action, it provides a way to
     // hook and define custom metadata related with the result.
     if (!err){
@@ -36,8 +36,6 @@ class Update extends Mebo.Action{
         message: 'Bear updated!',
       });
     }
-
-    return super._finalize(err, value);
   }
 }
 

@@ -19,10 +19,43 @@ It covers the basics of Mebo's RESTful support:
 git clone https://github.com/meboHQ/example-restful-using-express-mongodb.git
 cd example-restful-using-express-mongodb
 npm install
+```
+
+### Command-line
+Running through the command-line:
+
+All
+```
+node . --cli bear.all
+```
+
+Create
+```
+node . --cli bear.create --help
+```
+
+Delete
+```
+node . --cli bear.delete --help
+```
+
+Get
+```
+node . --cli bear.get --help
+```
+
+Update
+```
+node . --cli bear.update --help
+```
+
+### Web
+Running through the web:
+
+```
 NODE_ENV=development node .
 ```
 
-## Actions
 All
 ```
 GET: http://localhost:8080/api/bears
