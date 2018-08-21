@@ -17,14 +17,11 @@ require('./db.js');
 // Command-line support:
 // node . --cli
 if (require.main === module && process.argv.includes('--cli')) {
-  const actionName = process.argv[process.argv.indexOf('--cli')];
-
   // creating a command-line handler which is used to load the command-line
   // arguments to the action, execute the action and to output the result back to the console
   Mebo.Handler.get('cli').init(
-    actionName,
     {
-      initializedCallback: (value) => {
+      finalizeCallback: (value) => {
         mongoose.disconnect();
       }
     });
