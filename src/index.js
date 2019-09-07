@@ -15,16 +15,18 @@ require('./Actions');
 require('./db.js');
 
 // Command-line support:
-// node . --cli
-if (require.main === module && process.argv.includes('--cli')) {
+// node . --help
+const cli = Mebo.Handler.get('cli');
+if (cli.isSupported()){
   // creating a command-line handler which is used to load the command-line
   // arguments to the action, execute the action and to output the result back to the console
-  Mebo.Handler.get('cli').init(
+  cli.init(
     {
       finalizeCallback: (value) => {
         mongoose.disconnect();
       }
-    });
+    }
+  );
 }
 
 // Web support:

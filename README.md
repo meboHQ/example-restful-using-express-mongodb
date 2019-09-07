@@ -23,30 +23,33 @@ npm install
 
 ### Command-line
 Running through the command-line:
+```
+node . --help
+```
 
 All
 ```
-node . --cli bear.all
+node . bear.all --help
 ```
 
 Create
 ```
-node . --cli bear.create --help
+node . bear.create --help
 ```
 
 Delete
 ```
-node . --cli bear.delete --help
+node . bear.delete --help
 ```
 
 Get
 ```
-node . --cli bear.get --help
+node . bear.get --help
 ```
 
 Update
 ```
-node . --cli bear.update --help
+node . bear.update --help
 ```
 
 ### Web
